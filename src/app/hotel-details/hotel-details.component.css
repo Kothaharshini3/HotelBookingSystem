@@ -1,0 +1,45 @@
+
+
+
+.col1{
+   
+    width:40%;
+    height:90%;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    display: flex;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    background-color: rgb(28,28,28);
+    
+}
+.col1::-webkit-scrollbar{
+    display:none;
+}
+
+section{
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+button{
+    background-color:blueviolet;
+    border: none;
+    color: aliceblue;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 40%;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-image: url(../../assets/details.jpg) ;
+    background-size: cover;
+    
+}
+

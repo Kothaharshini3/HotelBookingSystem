@@ -1,0 +1,62 @@
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div class="container-fluid">
+        <strong><a class="navbar-brand" href="#">HOoBO</a></strong>
+          <button class="navbar-toggler" type="button" data-bs-target="#Mainmenu" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="Mainmenu">
+              <ul class="navbar-nav mb-3 mt-3 ms-auto">
+                  <li class="nav-item"><a routerLink="#" class="nav-link">Welcome {{userName}} ;) </a></li>
+                  <li class="nav-item"><a routerLink="/wishlist/:id" class="nav-link">🧡 favourites</a></li>
+                  <li class="nav-item"><a (click)=" signOut()" class="nav-link">LogOut</a></li> 
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+<br>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> 
+<h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;font-size:xx-large;"><b>Welcome to HOoBO</b></h1>
+<p style="text-align: center; font-family: 'Times New Roman', Times, serif;font-size: larger;">Select Your Destination, Choose From The Best Reviewed Hotels,Book And Pay</p><br>
+
+
+<div class="form-group">
+    <div class="col-md-6" >
+      
+      <input type="text" [(ngModel)]="searchText" 
+             class="form-control" placeholder="Search By Location" />
+    </div>
+</div><br>
+
+
+
+<div class="main" >
+  <br>
+<div class="cards" *ngFor="let h of hotel | location:searchText">
+    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+      <img src="{{h.hotelImg}}" class="img-fluid" height="400" width="500"/>
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
+    </div>
+    <div class="card-body">
+     <b> <h3 class="card-title">{{ h.hotelName }}</h3> </b><br>
+     <div class="container">
+        <div class="row">
+          <div class="col">
+            <span style="margin-left: 10%; font-family: 'Times New Roman', Times, serif; font-size: larger;">Location: {{ h.hotelAddress }} <span style="margin-left: 17%;"><i (click)="navigateToWishlist(h.hotelId)" *ngIf="addToWishList"  class="fa fa-heart" style="font-size:30px;color:rgb(238, 39, 55)"></i></span></span>
+          </div>
+        </div>
+      </div>
+     <div class="container text-center"><br>
+      <button (click)="navigateToBookNow(h.hotelId)">View Details</button> 
+     </div><br>
+     <br>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+    
+         

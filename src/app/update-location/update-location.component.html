@@ -1,0 +1,42 @@
+<app-adminheader></app-adminheader>
+<body>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+<div style="margin-left: 30px;">
+<i class='bi bi-arrow-return-left'></i>
+<a routerLink="/location" type="submit" style="color: black; font-size:large;margin-left: 3px;" >Back to page</a>
+</div>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col" style="margin-top: 20%;margin-left: 10%;">
+        <span style="font-family: 'Times New Roman', Times, serif; font-size: xx-large;font-weight: 900;" >UPDATE THE LOCATION</span>
+      </div>
+      <div class="col" ><br><br><br><br><br>
+      <div class="form-group">
+        <label>Location Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="locationId"
+          [(ngModel)]="location.locationId"
+          name="locationId"
+        /><br>
+      
+        <label>Location Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="locationName"
+          [(ngModel)]="location.locationName"
+          name="locationName"
+        /><br>
+     
+      
+      <button class="btn btn-success" type="submit">Update Location</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</body>

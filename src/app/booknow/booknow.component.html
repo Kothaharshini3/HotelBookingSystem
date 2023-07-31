@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" >HOoBO</a>
+        <button class="navbar-toggler" type="button" data-bs-target="#Mainmenu" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="Mainmenu">
+            <ul class="navbar-nav mb-0 mt-0 ms-auto">
+                <li class="nav-item"><a (click)="signOut()" class="nav-link">LogOut</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  <body>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+  /><br>
+  
+  <div style="margin-left: 30px">
+    <i class="bi bi-arrow-return-left" style="color: aliceblue;"></i>
+    <a
+      routerLink="/user"
+      type="submit"
+      style="color:azure; font-size:x-large; margin-left: 3px"
+      >Back</a
+    >
+  </div>
+    <br>
+    <div class="container">
+      <h3>BOoK HeRe ;)</h3>
+      <br />
+      <form (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="userId"
+              [(ngModel)]="userId"
+              name="userId"
+              placeholder="userId"
+            /><label>User Id</label>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="hotelId"
+              [(ngModel)]="hotel.hotelId"
+              name="hotelId"
+              placeholder="hotelId"
+            /><label>Hotel Id</label><br /><br />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="date"
+                [(ngModel)]="checkIn"
+                (change)="calculateDays('checkIn', $event)"
+                min="{{ minDate }}"
+                required
+              />
+              <label>Check In</label><br /><br />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input
+                class="form-control"
+                [(ngModel)]="checkOut"
+                type="date"
+                (change)="calculateDays('checkOut', $event)"
+                min="{{ minDate }}"
+                required
+              />
+              <label>check out</label><br /><br />
+            </div>
+          </div>
+        </div>
+  
+        <!-- <button (click)="calculateDays()">View no.of days</button> -->
+        <h3>Number of days: {{ days }}</h3>
+  
+        <input
+          type="text"
+          class="form-control"
+          id="noOfRooms"
+          [(ngModel)]="booking.noOfRooms"
+          name="noOfRooms"
+          placeholder="noOfRooms"
+        /><label>Enter no of rooms</label><br /><br />
+  
+        <span  
+          >Total amount to pay: &nbsp;
+          {{ hotel.hotelPrice * booking.noOfRooms * booking.noOfDays }}</span
+        >
+        <br /><br />
+  
+        <button class="btn btn-success" type="submit">
+          Proceed To <br />
+          payment
+        </button>
+      </form>
+    </div>
+    <br />
+  </body>
+  
+  
+  
+  

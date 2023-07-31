@@ -1,0 +1,57 @@
+<app-adminheader></app-adminheader>
+
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+<div style="margin-left: 30px;">
+<i class='bi bi-arrow-return-left'></i>
+<a routerLink="/admin" type="submit" style="color: black; font-size:large;margin-left: 3px;" >Back to page</a>
+</div>
+
+
+
+<br>
+<button (click)="navigate()" title="Click here to add hotel" style="margin-left: 2%;">Add Hotel</button>
+
+
+<br><br>
+<div class="container">
+<table class="table table-bordered table-stripped table-hover">
+  <thead class="text-white bg-dark">
+    <tr>
+      <th>Hotel ID</th>
+      <th>Hotel Name</th>
+      <th>Hotel Address</th>
+      <th>Hotel Image</th>
+      <th>Hotel Price</th>
+      <th>No of Rooms</th>
+      <th>Location Id</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody style="background-color: aliceblue;">
+    <tr *ngFor="let h of hotel">
+      <td>{{ h.hotelId }}</td>
+      <td>{{ h.hotelName }}</td>
+      <td>{{ h.hotelAddress }}</td>
+      <td><img src="{{ h.hotelImg }}" height="100" width="200" /></td>
+      <td>{{ h.hotelPrice }}</td>
+      <td>{{ h.noOfRooms }}</td>
+      <td>{{ h.locationId }}</td>
+
+      <td>
+        <button (click)="navigateToUpdate(h.hotelId)" class="btn btn-success btn-md" title="update this hotel">
+          Update
+        </button>
+
+        <button
+          (click)="deleteHotel(h.hotelId)"
+          class="btn btn-danger btn-md"
+          title="delete this user"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

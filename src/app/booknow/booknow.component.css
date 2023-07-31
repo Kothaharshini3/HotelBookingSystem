@@ -1,0 +1,50 @@
+.container{
+    width: 600px;
+    margin: 0 auto;
+    background-color: black;
+    opacity: 0.7;
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px 100px/120px;
+}
+
+input{
+    width:70%;
+    height: 50px;
+    margin-left: 15%;
+}
+
+body{
+    background-image: url('../../assets/booknow.jpg'); 
+    background-size: cover; 
+    height:900px;
+    
+}
+
+label{
+    margin-left: 18%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+}
+
+span{
+    margin-left: 18%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:xx-large;
+    font-weight: 700;
+}
+
+button {
+    width: 30%;
+    height: 60px;
+    display: block;
+    margin: auto;   
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 35%;
+}
+

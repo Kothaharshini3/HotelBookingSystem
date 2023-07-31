@@ -1,0 +1,41 @@
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" >HOoBO</a>
+            <button class="navbar-toggler" type="button" data-bs-target="#Mainmenu" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="Mainmenu">
+                <ul class="navbar-nav mb-2 mt-2 ms-auto">
+                    <li class="nav-item"><a routerLink="#" class="nav-link">Welcome Admin :) </a></li>
+                    <li class="nav-item"><a routerLink="/login" class="nav-link">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+      
+<br><br>
+
+<h1 style="text-align: center;">Welcome to HOoBO</h1><br>
+<p style="text-align: center; font-family: 'Times New Roman', Times, serif;font-size: larger;">Select Your Destination, Choose From The Best Reviewed Hotels And Pay</p><br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button (click)="navigate()" style="font-family:'Times New Roman', Times, serif">View User Details</button>
+        </div>
+        <div class="col">
+            <button (click)="navigateToHotel()" style="font-family:'Times New Roman', Times, serif">View Hotel Details</button>
+        </div>
+        <div class="col">
+            <button (click)="navigateToLocation()" style="font-family:'Times New Roman', Times, serif">View Location Details</button>
+        </div>
+        <div class="col">
+            <button (click)="navigateToBooking()"style="font-family:'Times New Roman', Times, serif">View Booking Details</button>
+        </div>
+
+    </div>
+</div>
+</body>
+
+

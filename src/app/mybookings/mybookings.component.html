@@ -1,0 +1,25 @@
+
+<div class="container">
+    <table class="table table-bordered table-stripped table-hover" style="width:70%">
+      <thead class="text-white bg-dark">
+        <tr>
+            <th >Booking ID</th>
+            <th >User ID</th>
+            <th >Hotel ID</th>
+            <th >No Of Rooms</th>
+            <th >No Of Days</th>
+        </tr>
+    </thead>
+    <tbody style="background-color: aliceblue;">
+      <tr *ngFor="let b of booking">
+        <td>{{ b.bookingid }}</td>
+        <td>{{ b.userId}}</td>
+        <td>{{ b.hotelId}}</td>
+        <td>{{ b.noOfRooms}}</td>
+        <td>{{ b.noOfDays}}</td>
+  
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

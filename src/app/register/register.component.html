@@ -1,0 +1,200 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#" >HOoBO</a>
+      <button class="navbar-toggler" type="button" data-bs-target="#Mainmenu" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="Mainmenu">
+          <ul class="navbar-nav mb-2 mt-2 ms-auto">
+              <li class="nav-item" ><a routerLink="/register" class="nav-link">Register</a></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Niconne&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <h1 class="animated zoomIn">welcome to hoobo</h1>
+        <br />
+        <p
+          class="animated zoomIn delay-2s"
+          style="font-family: 'Seaweed Script', cursive; font-size: xx-large"
+        >
+          We are the biggest hotel chain, not for nothing
+        </p>
+        <br />
+        <h1
+          class="animated zoomIn delay-4s"
+          style="font-family: 'Yesteryear', cursive; font-size: larger"
+        >
+          Search by what matters to you most
+        </h1>
+      </div>
+      <form #regForm="ngForm" (ngSubmit)="onSubmit()"  novalidate>
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i>
+          <h2>Register here</h2>
+        </div>
+        <br />
+        <div *ngIf="name.errors?.['required']&& name.touched" class="danger">
+          *please enter name
+        </div>
+        <div *ngIf="name.errors?.['minlength']&& name.touched" class="danger">
+          *please enter atleast 3 characters
+        </div>
+        <div class="info">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="user.userName"
+            name="name"
+            required
+            minlength="3"
+            maxlength="20"
+            #name="ngModel"
+            placeholder="Full Name"
+          /><br />
+          <div
+            *ngIf="address.errors?.['required']&& address.touched"
+            class="danger"
+          >
+            *please enter address
+          </div>
+          <div
+            *ngIf="address.errors?.['minlength']&& address.touched"
+            class="danger"
+          >
+            *please enter atleast 3 characters
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            [(ngModel)]="user.userAddress"
+            name="address"
+            #address="ngModel"
+            required
+            minlength="3"
+            maxlength="20"
+            placeholder="Address"
+          /><br />
+          <div
+            *ngIf="contactNumber.errors?.['required']&& contactNumber.touched"
+            class="danger"
+          >
+            *please enter contact number
+          </div>
+          <div
+            *ngIf="contactNumber.errors?.['minlength']&& contactNumber.touched"
+            class="danger"
+          >
+            *please enter 10 digits
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="contactNumber"
+            [(ngModel)]="user.userPhno"
+            name="contactNumber"
+            #contactNumber="ngModel"
+            required
+            minlength=10
+            maxlength=12
+            placeholder="Contact Number"
+          /><br />
+          <div
+            *ngIf="email.errors?.['required']&& email.touched"
+            class="danger"
+          >
+            *please enter email
+          </div>
+          <div
+            *ngIf="email.errors?.['minlength']&& email.touched"
+            class="danger"
+          >
+            *please include special characters
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            [(ngModel)]="user.userEmail"
+            name="email"
+            #email="ngModel"
+            required
+            minlength="10"
+            maxlength="30"
+            placeholder="Email"
+          /><br />
+          <div
+            *ngIf="password.errors?.['required']&& password.touched"
+            class="danger"
+          >
+            *please enter password
+          </div>
+          <div
+            *ngIf="password.errors?.['minlength']&& password.touched"
+            class="danger"
+          >
+            *please enter password
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            id="password" 
+            [(ngModel)]="user.userPassword"
+            name="password"
+            #password="ngModel"
+            required
+            minlength="3"
+            maxlength="10"
+            placeholder="Password" 
+          /><br />
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

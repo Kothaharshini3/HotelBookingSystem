@@ -1,0 +1,36 @@
+<link rel=”stylesheet” href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <strong><a class="navbar-brand" href="#">HOoBO</a></strong>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-target="#Mainmenu"
+      data-bs-toggle="collapse"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Mainmenu">
+      <ul class="navbar-nav mb-2 mt-2 ms-auto">
+        <li class="nav-item">
+          <a click="signOut()" class="nav-link">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br><br><br>
+<div class="container">
+<h1 style="margin-left: 15%;">Click on yes to proceed payment</h1>
+<h1 style="margin-left: 25%;">Click on No to go back</h1>
+ 
+<button (click)="makePayment()" style="margin-left: 25%;">Yes</button>
+<button routerLink="/user" style="margin-left: 20%;" >No</button>
+</div>
+</body>
+
+

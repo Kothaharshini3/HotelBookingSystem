@@ -1,0 +1,44 @@
+button{
+    background-color:ghostwhite;
+    border: none;
+    color:blueviolet;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    padding: 15px 20px;
+    font-weight: 900;
+    
+}
+
+button:hover{
+    /* background-color:mediumorchid; */
+    transition: 0.7s;
+    transform: scale(1.2,1);
+}
+
+.container{
+    width: 500px;
+    margin: 0 auto;
+    background-color:black;
+    color:ghostwhite;
+    opacity: 0.4;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 37%;
+    border-radius: 10px 100px/120px;
+}
+
+body{
+    background-image: url('../../assets/room6.jpg'); 
+    background-size: cover; 
+    height:750px;
+    
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-weight: bolder;
+}
